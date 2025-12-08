@@ -4,26 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekly Report - {{ $positionTitle }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
-      @font-face {
-        font-family: 'Nunito';
-        src: url(data:font/truetype;charset=utf-8;base64,{{ base64_encode(file_get_contents(resource_path('fonts/Nunito-Regular.ttf'))) }}) format('truetype');
-        font-weight: 400;
-        font-style: normal;
+      @page {
+        margin: 40px 50px;
       }
 
-      @font-face {
-        font-family: 'Nunito';
-        src: url(data:font/truetype;charset=utf-8;base64,{{ base64_encode(file_get_contents(resource_path('fonts/Nunito-Bold.ttf'))) }}) format('truetype');
-        font-weight: 700;
-        font-style: normal;
-      }
-
-      @font-face {
-        font-family: 'Nunito';
-        src: url(data:font/truetype;charset=utf-8;base64,{{ base64_encode(file_get_contents(resource_path('fonts/Nunito-ExtraBold.ttf'))) }}) format('truetype');
-        font-weight: 800;
-        font-style: normal;
+      @page :first {
+        margin: 0;
       }
 
       * {
@@ -140,11 +130,6 @@
         color: #006D6F;
       }
 
-      /* Report Content Styles */
-      .report-content {
-        padding: 40px 50px;
-      }
-
       .report-title {
         font-family: 'Nunito', Arial, Helvetica, sans-serif;
         font-size: 26px;
@@ -156,7 +141,7 @@
 
       .status-section {
         padding-top: 36px;
-        page-break-inside: avoid;
+        /*page-break-inside: avoid;*/
       }
 
       .status-header {

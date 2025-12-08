@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Services;
 
-use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
+use Spatie\Browsershot\Browsershot;
 
 class ReportPdfGenerator
 {
@@ -44,7 +44,7 @@ class ReportPdfGenerator
     {
         $response = Http::withOptions(['allow_redirects' => true])->get($url);
 
-        if (! $response->successful()) {
+        if (!$response->successful()) {
             throw new \RuntimeException('Failed to fetch CSV data from Google Sheets');
         }
 
@@ -75,7 +75,7 @@ class ReportPdfGenerator
     /**
      * Group candidates by their status.
      *
-     * @param  array<int, array<string, string>>  $candidates
+     * @param array<int, array<string, string>> $candidates
      * @return array<string, array<int, array<string, string>>>
      */
     protected function groupByStatus(array $candidates): array
@@ -96,7 +96,7 @@ class ReportPdfGenerator
 
         foreach ($candidates as $candidate) {
             $status = trim($candidate['Status'] ?? 'Unknown');
-            if (! isset($grouped[$status])) {
+            if (!isset($grouped[$status])) {
                 $grouped[$status] = [];
             }
             $grouped[$status][] = $candidate;
@@ -118,7 +118,7 @@ class ReportPdfGenerator
     }
 
     /**
-     * Generate PDF from HTML using Snappy (wkhtmltopdf wrapper).
+     * Generate PDF from HTML using Browsershot (Puppeteer/Chromium wrapper).
      */
     protected function generatePdfFromHtml(string $html, string $clientName, string $positionTitle, string $date): string
     {
@@ -130,20 +130,18 @@ class ReportPdfGenerator
             $positionTitle,
             date('n.j', strtotime($date))
         );
-        $outputPath = storage_path('app/reports/'.$outputFilename);
+        $outputPath = storage_path('app/reports/' . $outputFilename);
 
-        if (! is_dir(storage_path('app/reports'))) {
+        if (!is_dir(storage_path('app/reports'))) {
             mkdir(storage_path('app/reports'), 0755, true);
         }
 
-        SnappyPdf::loadHTML($html)
-            ->setOption('page-size', 'Letter')
-            ->setOption('margin-top', 0)
-            ->setOption('margin-bottom', 0)
-            ->setOption('margin-left', 0)
-            ->setOption('margin-right', 0)
-            ->setOption('disable-smart-shrinking', true)
-            ->setOption('enable-local-file-access', true)
+        Browsershot::html($html)
+//            ->setNodeBinary('/Users/jwohlfert/.nvm/versions/node/v22.19.0/bin/node')
+//            ->setNpmBinary('/Users/jwohlfert/.nvm/versions/node/v22.19.0/bin/npm')
+            ->format('Letter')
+            ->margins(0, 0, 0, 0)
+            ->showBackground()
             ->save($outputPath);
 
         return $outputPath;
