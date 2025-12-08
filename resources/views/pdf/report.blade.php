@@ -12,7 +12,7 @@
       }
 
       body {
-        font-family: 'Nunito', Arial, Helvetica, sans-serif;
+        font-family: Nunito, Arial, Helvetica, sans-serif;
         font-size: 12px;
         line-height: 1.4;
         color: #333;
@@ -77,14 +77,14 @@
       }
 
       .title-header h1 {
-        font-family: 'Nunito', Arial, Helvetica, sans-serif;
+        font-family: Nunito, Arial, Helvetica, sans-serif;
         font-size: 38px;
         margin-bottom: 5px;
         letter-spacing: 1px;
       }
 
       .title-header h2 {
-        font-family: 'Nunito', Arial, Helvetica, sans-serif;
+        font-family: Nunito, Arial, Helvetica, sans-serif;
         font-size: 34px;
         letter-spacing: 1px;
       }
@@ -95,7 +95,7 @@
       }
 
       .title-body h3 {
-        font-family: 'Nunito', Arial, Helvetica, sans-serif;
+        font-family: Nunito, Arial, Helvetica, sans-serif;
         font-size: 26px;
         color: #006D6F;
         margin-bottom: 30px;
@@ -110,7 +110,7 @@
       }
 
       .client-name-text {
-        font-family: 'Nunito', Arial, Helvetica, sans-serif;
+        font-family: Nunito, Arial, Helvetica, sans-serif;
         font-size: 20px;
         color: #006D6F;
       }
@@ -121,7 +121,7 @@
       }
 
       .report-title {
-        font-family: 'Nunito', Arial, Helvetica, sans-serif;
+        font-family: Nunito, Arial, Helvetica, sans-serif;
         font-size: 26px;
         text-align: center;
         margin-bottom: 8px;
@@ -130,10 +130,11 @@
 
       .status-section {
         padding-top: 36px;
+        page-break-inside: avoid;
       }
 
       .status-header {
-        font-family: 'Nunito', Arial, Helvetica, sans-serif;
+        font-family: Nunito, Arial, Helvetica, sans-serif;
         font-size: 15px;
         margin-bottom: 8px;
         color: #333;
@@ -143,11 +144,10 @@
         width: 100%;
         border-collapse: collapse;
         margin-bottom: 0;
-        page-break-inside: avoid;
       }
 
       th {
-        font-family: 'Nunito', Arial, Helvetica, sans-serif;
+        font-family: Nunito, Arial, Helvetica, sans-serif;
         background-color: #f0f0f0;
         border: 1px solid #333;
         padding: 8px 12px;
