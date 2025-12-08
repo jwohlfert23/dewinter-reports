@@ -98,15 +98,17 @@
       }
 
       .title-header h1 {
-        font-family: Nunito, Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
         font-size: 38px;
+        font-weight: 800;
         margin-bottom: 5px;
         letter-spacing: 1px;
       }
 
       .title-header h2 {
-        font-family: Nunito, Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
         font-size: 34px;
+        font-weight: 800;
         letter-spacing: 1px;
       }
 
@@ -116,8 +118,9 @@
       }
 
       .title-body h3 {
-        font-family: Nunito, Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
         font-size: 26px;
+        font-weight: 700;
         color: #006D6F;
         margin-bottom: 30px;
       }
@@ -131,8 +134,9 @@
       }
 
       .client-name-text {
-        font-family: Nunito, Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
         font-size: 20px;
+        font-weight: 700;
         color: #006D6F;
       }
 
@@ -142,8 +146,9 @@
       }
 
       .report-title {
-        font-family: Nunito, Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
         font-size: 26px;
+        font-weight: 800;
         text-align: center;
         margin-bottom: 8px;
         color: #333;
@@ -155,8 +160,9 @@
       }
 
       .status-header {
-        font-family: Nunito, Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
         font-size: 15px;
+        font-weight: 700;
         margin-bottom: 8px;
         color: #333;
       }
@@ -168,7 +174,8 @@
       }
 
       th {
-        font-family: Nunito, Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
+        font-weight: 700;
         background-color: #f0f0f0;
         border: 1px solid #333;
         padding: 8px 12px;
