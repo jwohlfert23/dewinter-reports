@@ -139,7 +139,7 @@
         font-family: 'Nunito Bold', Arial, Helvetica, sans-serif;
         font-size: 26px;
         text-align: center;
-        margin-bottom: 35px;
+        margin-bottom: 8px;
         color: #333;
       }
 
