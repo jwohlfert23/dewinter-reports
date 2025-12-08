@@ -137,6 +137,7 @@ class ReportPdfGenerator
         }
 
         Browsershot::html($html)
+            ->noSandbox()
 //            ->setNodeBinary('/Users/jwohlfert/.nvm/versions/node/v22.19.0/bin/node')
 //            ->setNpmBinary('/Users/jwohlfert/.nvm/versions/node/v22.19.0/bin/npm')
             ->format('Letter')
