@@ -148,6 +148,7 @@
         width: 100%;
         border-collapse: collapse;
         margin-bottom: 0;
+        page-break-inside: avoid;
       }
 
       th {
@@ -206,14 +207,18 @@
                 <table>
                     <thead>
                     <tr>
-                        <th style="width: 50%;">Candidate Name</th>
+                        <th style="width: 50%;">Candidate</th>
                         <th style="width: 50%;">Company</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($candidates as $candidate)
                         <tr>
-                            <td>{{ $candidate['Candidate'] ?? '' }}</td>
+                            <td>
+                                <a href="{{$candidate['LinkedIn URL']}}">
+                                    {{ $candidate['Candidate'] ?? '' }}
+                                </a>
+                            </td>
                             <td>{{ $candidate['Company'] ?? '' }}</td>
                         </tr>
                     @endforeach
