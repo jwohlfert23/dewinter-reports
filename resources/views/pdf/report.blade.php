@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekly Report - {{ $positionTitle }}</title>
     <style>
+      @font-face {
+        font-family: 'Nunito';
+        src: url(data:font/truetype;charset=utf-8;base64,{{ base64_encode(file_get_contents(resource_path('fonts/Nunito-Regular.ttf'))) }}) format('truetype');
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Nunito';
+        src: url(data:font/truetype;charset=utf-8;base64,{{ base64_encode(file_get_contents(resource_path('fonts/Nunito-Bold.ttf'))) }}) format('truetype');
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Nunito';
+        src: url(data:font/truetype;charset=utf-8;base64,{{ base64_encode(file_get_contents(resource_path('fonts/Nunito-ExtraBold.ttf'))) }}) format('truetype');
+        font-weight: 800;
+        font-style: normal;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -12,7 +33,7 @@
       }
 
       body {
-        font-family: Nunito, Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
         font-size: 12px;
         line-height: 1.4;
         color: #333;
