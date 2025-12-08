@@ -7,15 +7,15 @@
     <style>
       @font-face {
         font-family: 'Nunito';
-        src: url('https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTM.woff2') format('woff2');
+        src: url('https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTM.ttf') format('truetype');
       }
       @font-face {
         font-family: 'Nunito Bold';
-        src: url('https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDFwuRTM.woff2') format('woff2');
+        src: url('https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDFwmRTM.ttf') format('truetype');
       }
       @font-face {
         font-family: 'Nunito ExtraBold';
-        src: url('https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDDsuRTM.woff2') format('woff2');
+        src: url('https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDDsmRTM.ttf') format('truetype');
       }
     </style>
 
@@ -130,10 +130,6 @@
         color: #006D6F;
       }
 
-      @page {
-        margin-top: 40px;
-      }
-
       /* Report Content Styles */
       .report-content {
         padding: 40px 50px;
@@ -148,7 +144,7 @@
       }
 
       .status-section {
-        margin-bottom: 28px;
+        padding: 20px 0;
         page-break-inside: avoid;
       }
 
