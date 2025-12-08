@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__laravel-boost__application-info",
+      "WebFetch(domain:docs.google.com)",
+      "WebFetch(domain:doc-08-60-sheets.googleusercontent.com)",
+      "Bash(mkdir:*)",
+      "Bash(php /Users/jwohlfert/Repos/dewinter-reports/artisan make:volt:*)",
+      "Bash(php /Users/jwohlfert/Repos/dewinter-reports/artisan make:test:*)",
+      "Bash(vendor/bin/pint:*)",
+      "Bash(php artisan test:*)",
+      "Bash(npm run build:*)",
+      "mcp__laravel-boost__search-docs",
+      "Bash(php artisan:*)",
+      "Bash(brew install:*)",
+      "Bash(curl:*)",
+      "Bash(sudo installer:*)",
+      "Bash(wkhtmltopdf:*)",
+      "Bash(open:*)",
+      "Bash(composer require:*)",
+      "Bash(cat:*)",
+      "mcp__laravel-boost__database-schema"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "laravel-boost",
+    "herd"
+  ]
+}
