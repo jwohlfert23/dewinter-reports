@@ -143,6 +143,7 @@ class ReportPdfGenerator
             ->setOption('margin-left', 0)
             ->setOption('margin-right', 0)
             ->setOption('disable-smart-shrinking', true)
+            ->setOption('enable-local-file-access', true)
             ->save($outputPath);
 
         return $outputPath;
