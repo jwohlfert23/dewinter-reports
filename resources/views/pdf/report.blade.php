@@ -7,15 +7,15 @@
     <style>
       @font-face {
         font-family: 'Nunito';
-        src: url('https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTM.ttf') format('truetype');
+        src: url('https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2') format('woff2');
       }
       @font-face {
         font-family: 'Nunito Bold';
-        src: url('https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDFwmRTM.ttf') format('truetype');
+        src: url('https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2') format('woff2');
       }
       @font-face {
         font-family: 'Nunito ExtraBold';
-        src: url('https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDDsmRTM.ttf') format('truetype');
+        src: url('https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2') format('woff2');
       }
     </style>
 
