@@ -144,7 +144,7 @@
       }
 
       .status-section {
-        padding: 20px 0;
+        padding-top: 36px;
         page-break-inside: avoid;
       }
 
@@ -158,7 +158,7 @@
       table {
         width: 100%;
         border-collapse: collapse;
-        margin-bottom: 8px;
+        margin-bottom: 0;
       }
 
       th {
