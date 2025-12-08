@@ -6,21 +6,8 @@
     <title>Weekly Report - {{ $positionTitle }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <style>
-      @font-face {
-        font-family: 'Nunito Bold';
-        font-weight: 700;
-        font-style: normal;
-        src: url('https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2') format('woff2');
-      }
-      @font-face {
-        font-family: 'Nunito ExtraBold';
-        font-weight: 800;
-        font-style: normal;
-        src: url('https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2') format('woff2');
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+          rel="stylesheet">
 
     <style>
       * {
@@ -95,14 +82,14 @@
       }
 
       .title-header h1 {
-        font-family: 'Nunito ExtraBold', 'Nunito', Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
         font-size: 38px;
         margin-bottom: 5px;
         letter-spacing: 1px;
       }
 
       .title-header h2 {
-        font-family: 'Nunito ExtraBold', 'Nunito', Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
         font-size: 34px;
         letter-spacing: 1px;
       }
@@ -113,7 +100,7 @@
       }
 
       .title-body h3 {
-        font-family: 'Nunito Bold', 'Nunito', Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
         font-size: 26px;
         color: #006D6F;
         margin-bottom: 30px;
@@ -128,7 +115,7 @@
       }
 
       .client-name-text {
-        font-family: 'Nunito Bold', 'Nunito', Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
         font-size: 20px;
         color: #006D6F;
       }
@@ -139,7 +126,7 @@
       }
 
       .report-title {
-        font-family: 'Nunito Bold', 'Nunito', Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
         font-size: 26px;
         text-align: center;
         margin-bottom: 8px;
@@ -148,11 +135,10 @@
 
       .status-section {
         padding-top: 36px;
-        page-break-inside: avoid;
       }
 
       .status-header {
-        font-family: 'Nunito Bold', 'Nunito', Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
         font-size: 15px;
         margin-bottom: 8px;
         color: #333;
@@ -165,7 +151,7 @@
       }
 
       th {
-        font-family: 'Nunito Bold', 'Nunito',  Arial, Helvetica, sans-serif;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
         background-color: #f0f0f0;
         border: 1px solid #333;
         padding: 8px 12px;
