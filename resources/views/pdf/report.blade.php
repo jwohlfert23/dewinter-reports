@@ -164,6 +164,11 @@
       tr:nth-child(even) td {
         background-color: #fafafa;
       }
+
+      .candidate-url {
+        text-decoration: none;
+        color: #333;
+      }
     </style>
 </head>
 <body>
@@ -210,7 +215,7 @@
                     @foreach($candidates as $candidate)
                         <tr>
                             <td>
-                                <a href="{{$candidate['LinkedIn URL']}}">
+                                <a href="{{$candidate['LinkedIn URL']}}" class="candidate-url">
                                     {{ $candidate['Candidate'] ?? '' }}
                                 </a>
                             </td>
