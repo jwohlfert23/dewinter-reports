@@ -103,8 +103,8 @@
       }
 
       .client-logo {
-        width: 180px;
-        height: 70px;
+        max-width: 180px;
+        max-height: 70px;
         margin: 0 auto;
         display: block;
         object-fit: contain;
