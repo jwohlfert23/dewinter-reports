@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use Livewire\Volt\Volt;
 
-Route::redirect('/', '/reports/generate')->name('home');
+Route::redirect('/', '/reports')->name('home');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
@@ -24,7 +24,9 @@ Route::middleware(['auth'])->group(function () {
         )
         ->name('two-factor.show');
 
-    Volt::route('reports/generate', 'reports.generate')->name('reports.generate');
+    Volt::route('reports', 'reports.index')->name('reports.index');
+    Volt::route('reports/create', 'reports.generate')->name('reports.create');
+    Volt::route('reports/{report}/edit', 'reports.generate')->name('reports.edit');
 
     Route::get('reports/view/{filename}', function (string $filename) {
         $path = storage_path('app/reports/'.$filename);
