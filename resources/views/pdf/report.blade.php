@@ -213,19 +213,28 @@
 <div class="report-content">
     <h1 class="report-title">Weekly Candidate Report</h1>
 
-    @foreach($groupedCandidates as $status => $candidates)
-        @if(count($candidates) > 0)
+    @foreach($groupedCandidates as $status => $group)
+        @if(count($group['candidates']) > 0)
+            @php
+                $showInterviewDate = $status === 'Interviewing' && $group['hasInterviewDate'];
+            @endphp
             <div class="status-section">
                 <h2 class="status-header">{{ $status === 'Screening' ? 'DeWinter Screening' : $status }}</h2>
                 <table>
                     <thead>
                     <tr>
-                        <th style="width: 50%;">Candidate</th>
-                        <th style="width: 50%;">Company</th>
+                        @if($showInterviewDate)
+                            <th style="width: 40%;">Candidate</th>
+                            <th style="width: 40%;">Company</th>
+                            <th style="width: 20%;">Interview Date</th>
+                        @else
+                            <th style="width: 50%;">Candidate</th>
+                            <th style="width: 50%;">Company</th>
+                        @endif
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($candidates as $candidate)
+                    @foreach($group['candidates'] as $candidate)
                         <tr>
                             <td>
                                 <a href="{{$candidate['LinkedIn URL']}}" class="candidate-url">
@@ -233,6 +242,9 @@
                                 </a>
                             </td>
                             <td>{{ $candidate['Company'] ?? '' }}</td>
+                            @if($showInterviewDate)
+                                <td>{{ \App\Services\ReportPdfGenerator::formatInterviewDate($candidate['Date Interviewing'] ?? '') }}</td>
+                            @endif
                         </tr>
                     @endforeach
                     </tbody>
