@@ -16,7 +16,6 @@ class extends Component {
     public string $clientName = '';
     public $clientLogo = null;
     public ?string $existingLogoPath = null;
-    public string $date = '';
     public string $positionTitle = '';
     public string $googleSheetUrl = '';
 
@@ -29,11 +28,8 @@ class extends Component {
             $this->report = $report;
             $this->clientName = $report->client_name;
             $this->existingLogoPath = $report->client_logo_path;
-            $this->date = $report->date->format('Y-m-d');
             $this->positionTitle = $report->position_title;
             $this->googleSheetUrl = $report->google_sheet_url;
-        } else {
-            $this->date = now()->format('Y-m-d');
         }
     }
 
@@ -42,7 +38,6 @@ class extends Component {
         $this->validate([
             'clientName' => ['required', 'string', 'max:255'],
             'clientLogo' => ['nullable', 'image', 'max:2048'],
-            'date' => ['required', 'date'],
             'positionTitle' => ['required', 'string', 'max:255'],
             'googleSheetUrl' => ['required', 'url', 'regex:/docs\.google\.com\/spreadsheets/'],
         ], [
@@ -57,7 +52,7 @@ class extends Component {
         $data = [
             'client_name' => $this->clientName,
             'client_logo_path' => $logoPath,
-            'date' => $this->date,
+            'date' => now()->toDateString(),
             'position_title' => $this->positionTitle,
             'google_sheet_url' => $this->googleSheetUrl,
         ];
@@ -91,7 +86,7 @@ class extends Component {
             $pdfPath = $generator->generate([
                 'client_name' => $this->clientName,
                 'client_logo' => $logoPath,
-                'date' => $this->date,
+                'date' => now()->toDateString(),
                 'position_title' => $this->positionTitle,
                 'google_sheet_url' => $this->googleSheetUrl,
             ]);
@@ -199,16 +194,6 @@ class extends Component {
         </div>
 
         <div class="grid gap-6 md:grid-cols-2">
-            <flux:field>
-                <flux:label>Report Date</flux:label>
-                <flux:input
-                    wire:model="date"
-                    type="date"
-                    required
-                />
-                <flux:error name="date" />
-            </flux:field>
-
             <flux:field>
                 <flux:label>Client Logo (Optional)</flux:label>
                 <input

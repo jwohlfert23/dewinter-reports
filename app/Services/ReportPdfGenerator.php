@@ -43,7 +43,9 @@ class ReportPdfGenerator
      */
     protected function fetchCsvData(string $url): array
     {
-        $response = Http::withOptions(['allow_redirects' => true])->get($url);
+        // Add cache-busting parameter to avoid Google Sheets caching
+        $cacheBuster = (str_contains($url, '?') ? '&' : '?').'_t='.time();
+        $response = Http::withOptions(['allow_redirects' => true])->get($url.$cacheBuster);
 
         if (! $response->successful()) {
             throw new \RuntimeException('Failed to fetch CSV data from Google Sheets');

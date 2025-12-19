@@ -60,7 +60,6 @@ test('report form validates google sheet url format', function () {
         ->test('reports.generate')
         ->set('clientName', 'Test Client')
         ->set('positionTitle', 'Senior Developer')
-        ->set('date', '2025-12-05')
         ->set('googleSheetUrl', 'https://example.com/not-a-sheet')
         ->call('save')
         ->assertHasErrors(['googleSheetUrl']);
@@ -73,13 +72,14 @@ test('can create a new report', function () {
         ->test('reports.generate')
         ->set('clientName', 'Test Client')
         ->set('positionTitle', 'Senior Developer')
-        ->set('date', '2025-12-05')
         ->set('googleSheetUrl', 'https://docs.google.com/spreadsheets/d/123/edit')
         ->call('save')
         ->assertHasNoErrors()
         ->assertRedirect();
 
-    expect(Report::where('client_name', 'Test Client')->exists())->toBeTrue();
+    $report = Report::where('client_name', 'Test Client')->first();
+    expect($report)->not->toBeNull();
+    expect($report->date->toDateString())->toBe(now()->toDateString());
 });
 
 test('can edit an existing report', function () {
@@ -103,7 +103,6 @@ test('report form loads existing data in edit mode', function () {
     $report = Report::factory()->for($user)->create([
         'client_name' => 'Acme Corp',
         'position_title' => 'Engineer',
-        'date' => '2025-12-05',
         'google_sheet_url' => 'https://docs.google.com/spreadsheets/d/abc/edit',
     ]);
 
@@ -111,7 +110,6 @@ test('report form loads existing data in edit mode', function () {
         ->test('reports.generate', ['report' => $report])
         ->assertSet('clientName', 'Acme Corp')
         ->assertSet('positionTitle', 'Engineer')
-        ->assertSet('date', '2025-12-05')
         ->assertSet('googleSheetUrl', 'https://docs.google.com/spreadsheets/d/abc/edit');
 });
 
@@ -159,7 +157,6 @@ test('generate pdf requires report to be saved first', function () {
         ->test('reports.generate')
         ->set('clientName', 'Test Client')
         ->set('positionTitle', 'Developer')
-        ->set('date', '2025-12-05')
         ->set('googleSheetUrl', 'https://docs.google.com/spreadsheets/d/123/edit')
         ->call('generateReport')
         ->assertHasErrors(['generation']);
